@@ -1,0 +1,15 @@
+{
+  "name": "app-caches",
+  "version": "0.1.0",
+  "description": "sample pwa app caching strategies",
+  "author": "Breno",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "materialize-css": "^0.100.2"
+  }
+}

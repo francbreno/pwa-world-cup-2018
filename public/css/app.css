@@ -1,0 +1,12 @@
+html {
+  height: 100vh;
+  box-sizing: content-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 100vh;
+}
