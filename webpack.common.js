@@ -14,14 +14,14 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     // Gera arquivo html do build a partir de um template
     new HtmlWebpackPlugin({
-      title: 'PWA Sample App',
+      hash: true,
       template: 'public/index.html',
     }),
   ],
   // arquivos de saída
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
   },
   // configuração de import dos módulos pelo tipo
   module: {
