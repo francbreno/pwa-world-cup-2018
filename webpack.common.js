@@ -9,13 +9,6 @@ module.exports = {
     'layout.toolbar': './src/layout/Toolbar.js',
     'layout.container': './src/layout/Container.js',
   },
-  // source maps do código gerado
-  devtool: 'inline-source-map',
-  // servidor de desenvolvimento (webpack-dev-server)
-  devServer: {
-    contentBase: './dist',
-    compress: true,
-  },
   plugins: [
     // Remove a pasta dist antes do build
     new CleanWebpackPlugin(['dist']),
@@ -37,13 +30,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
