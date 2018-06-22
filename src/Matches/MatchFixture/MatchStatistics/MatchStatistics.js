@@ -2,6 +2,8 @@ import React from 'react';
 
 import './MatchStatistics.css';
 
+import StringHelper from 'app/helpers/string';
+
 const MatchStatistics = ({
   show = false,
   homeTeamStatistics,
