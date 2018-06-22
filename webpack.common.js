@@ -7,8 +7,9 @@ module.exports = {
   // Ponto de entrada
   entry: {
     app: './src/index.js',
-    'layout.toolbar': './src/layout/Toolbar.js',
-    'layout.container': './src/layout/Container.js',
+    home: './src/Home/index.js',
+    Leaderboard: './src/Leaderboard/index.js',
+    Matches: './src/Matches/index.js',
   },
   plugins: [
     // Remove a pasta dist antes do build
@@ -26,7 +27,7 @@ module.exports = {
   // arquivos de saída
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].bundle.js',
   },
   // configuração de import dos módulos pelo tipo
   module: {
@@ -45,5 +46,11 @@ module.exports = {
         use: ['file-loader'],
       },
     ]
+  },
+  resolve: {
+    alias: {
+      img: path.resolve(__dirname, 'src/img/'),
+      app: path.resolve(__dirname, 'src')
+    }
   }
 }
