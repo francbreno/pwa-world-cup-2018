@@ -1,17 +1,16 @@
 import React from 'react';
 
-import Toolbar from './layout/Toolbar';
-import Container from './layout/Container';
+import Toolbar from './components/Toolbar';
+import Container from './components/Container';
+import Home from './Home';
 
 import './App.css';
 import Logo from './pwa-logo.png';
+
 const App = () => (
   <div>
     <Toolbar />
-    <Container>
-      <p>Welcome to PWA sample app</p>
-      <img src={Logo} alt='PWA sample app' />
-    </Container>
+    <Home />
   </div>
 );
 
