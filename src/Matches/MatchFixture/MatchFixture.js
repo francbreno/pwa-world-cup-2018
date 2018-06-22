@@ -9,7 +9,7 @@ import MatchLocation from './MatchLocation';
 import MatchScore from './MatchScore';
 import MatchFacts from './MatchFacts';
 
-const MatchFixture = ({ match, showStatistics }) => (
+const MatchFixture = ({ match, showStatistics, showEvents, showTime, resumed = false }) => (
   <React.Fragment>
   <div className="card">
     <header className="card-header has-background-black">
@@ -28,16 +28,20 @@ const MatchFixture = ({ match, showStatistics }) => (
         matchStatus={match.status}
       />
     </div>
-    <footer className="card-footer">
-      <MatchFacts
-        showStatistics={showStatistics}
-        currentTime={match.time}
-        homeTeamStatistics={match.home_team_statistics}
-        homeTeamEvents={match.home_team_events}
-        awayTeamStatistics={match.away_team_statistics}
-        awayTeamEvents={match.away_team_events}
-      />
-    </footer>
+    {!resumed && (
+      <footer className="card-footer">
+        <MatchFacts
+          showStatistics={showStatistics}
+          showEvents={showEvents}
+          showTime={showTime}
+          currentTime={match.time}
+          homeTeamStatistics={match.home_team_statistics}
+          homeTeamEvents={match.home_team_events}
+          awayTeamStatistics={match.away_team_statistics}
+          awayTeamEvents={match.away_team_events}
+        />
+      </footer>
+    )}
   </div>
   <br />
   </React.Fragment>
