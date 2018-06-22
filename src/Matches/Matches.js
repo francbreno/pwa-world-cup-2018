@@ -10,7 +10,9 @@ class Matches extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http://worldcup.sfg.io/matches/today')
+    const { today } = this.props;
+    const todayFilter = today ? 'today': '';
+    fetch(`http://worldcup.sfg.io/matches/${todayFilter}`)
       .then(response => response.json())
       .then(matches => matches.filter(match => {
         return !(
@@ -27,9 +29,10 @@ class Matches extends React.Component {
 
   render() {
     const { matches } = this.state;
+    const { resumed } = this.props;
     return (
       <div className="matches">
-        {matches.map(match => <MatchFixture key={match.fifa_id} match={match} />)}
+        {matches.map(match => <MatchFixture key={match.fifa_id} match={match} resumed={resumed} />)}
       </div>
     );
   }
