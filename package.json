@@ -10,11 +10,13 @@
     "start": "webpack-dev-server --open --config webpack.dev.js"
   },
   "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "bulma": "^0.7.1",
     "clean-webpack-plugin": "^0.1.19",
+    "date-fns": "^1.29.0",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "semantic-ui-css": "^2.3.2",
-    "semantic-ui-react": "^0.81.1"
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
