@@ -17,17 +17,17 @@ const Event = ({ name, time, player, awayTeam = false }) => {
     {awayTeam ? 
       (
         <React.Fragment>
-          <span>{player}</span>
-          <span>{time}</span>
           <EventIcon eventName={name} />
+          <span>{time}</span>
+          <span>{player}</span>
         </React.Fragment>
       )
       :
       (
         <React.Fragment>
-          <EventIcon eventName={name} />
-          <span>{time}</span>
           <span>{player}</span>
+          <span>{time}</span>
+          <EventIcon eventName={name} />
         </React.Fragment>
       )
     }
