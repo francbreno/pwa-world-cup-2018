@@ -7,6 +7,8 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   // servidor de desenvolvimento (webpack-dev-server)
   devServer: {
+    host: '0.0.0.0',
+    port: 8082,
     contentBase: './dist',
     compress: true,
   },
