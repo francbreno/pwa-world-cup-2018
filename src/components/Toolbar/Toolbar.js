@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Toolbar.css';
 import Logo from '../../pwa-logo.png';
@@ -23,9 +24,9 @@ const Toolbar = () => (
       </a>
     </div>
     <div className="navbar-menu">
-      <a className="navbar-item" href="https://bulma.io">Home</a>
-      <a className="navbar-item" href="https://bulma.io">Leaderboard</a>
-      <a className="navbar-item" href="https://bulma.io">Matches</a>
+      <Link className="navbar-item" to="/">Home</Link>
+      <Link className="navbar-item" to="/leaderboard">Leaderboard</Link>
+      <Link className="navbar-item" to="/matches">All Matches</Link>
     </div>
   </nav>
 );
