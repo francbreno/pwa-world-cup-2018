@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import 'semantic-ui-css/semantic.css';
+import 'bulma/css/bulma.css'
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';

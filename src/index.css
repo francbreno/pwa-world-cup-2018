@@ -1,12 +1,20 @@
 html {
-  height: 100vh;
-  box-sizing: content-box;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Open Sans";
+  color: #b7c4cb;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  min-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
