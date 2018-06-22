@@ -19,25 +19,29 @@ const CountryFlag = ({ name }) => (
   <Image path={require(`img/flags/${StringHelper.capitalize(name).replace(' ', '_')}.gif`)} />
 );
 
-const MatchTeam = ({ name, away = false }) => (
-  <div className="match-team">
-    {away ?
-      (
-        <React.Fragment>
-          <span className="team-name">{name}</span>
-          <CountryFlag name={name} />
-        </React.Fragment>
-      )
-      :
-      (
-        <React.Fragment>
-          <CountryFlag name={name} />
-          <span className="team-name">{name}</span>
-        </React.Fragment>
-      )
-    }
-  </div>
-);
+const MatchTeam = ({ team, away = false }) => {
+  return (
+    <div className="match-team">
+      {away ?
+        (
+          <React.Fragment>
+            <span className="team-name is-hidden-tablet">{team.code}</span>
+            <span className="team-name is-hidden-mobile">{team.country}</span>
+            <CountryFlag name={team.country} />
+          </React.Fragment>
+        )
+        :
+        (
+          <React.Fragment>
+            <CountryFlag name={team.country} />
+            <span className="team-name is-hidden-tablet">{team.code}</span>
+            <span className="team-name is-hidden-mobile">{team.country}</span>
+          </React.Fragment>
+        )
+      }
+    </div>
+  );
+}
 
 const Score = ({ homeGoals, awayGoals, status, color = 'black', textColor = 'white' }) => (
   <div className="score" style={{color: textColor, backgroundColor: color}}>
@@ -57,9 +61,9 @@ const Score = ({ homeGoals, awayGoals, status, color = 'black', textColor = 'whi
 
 const MatchScore = ({ homeTeam, awayTeam, matchStatus = 'future' }) => (
   <div className="match-score">
-    <MatchTeam name={homeTeam.country} />
+    <MatchTeam team={homeTeam} />
     <Score homeGoals={homeTeam.goals} awayGoals={awayTeam.goals} status={matchStatus} />
-    <MatchTeam name={awayTeam.country} away />
+    <MatchTeam team={awayTeam} away />
   </div>
 );
 
