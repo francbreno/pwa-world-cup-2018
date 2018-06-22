@@ -1,10 +1,11 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+
+import './Container.css';
 
 const Container = ({ children }) => (
-  <Grid mobile={16} tablet={8} computer={4} container>
+  <div className="container is-fluid">
     {children}
-  </Grid>
+  </div>
 );
 
 export default Container;
