@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Container from '../components/Container';
-import Matches from '../Matches';
-import LiveMatches from '../Matches/LiveMatches';
+import Container from 'app/components/Container';
+import Matches from 'app/Matches';
+import LiveMatches from 'app/LiveMatches';
 
 const Home = () => (
     <div className="columns">
@@ -10,7 +10,7 @@ const Home = () => (
         <section className="section">
           <Container>
             <h1 className="title">Today's Matches</h1>
-            <Matches />
+            <Matches today />
           </Container>
         </section>
       </div>
