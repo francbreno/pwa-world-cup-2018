@@ -1,0 +1,15 @@
+.score {
+  display: flex;
+  justify-content: center;
+  width: 65px;
+
+  padding: 6px;
+
+  border-radius: 6px;
+}
+
+.score > * {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2px;
+}
