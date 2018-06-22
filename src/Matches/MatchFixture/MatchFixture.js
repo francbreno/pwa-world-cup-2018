@@ -164,6 +164,7 @@ const MatchLocation = ({ venue, location, datetime }) => (
 );
 
 const MatchFixture = ({ match, showStatistics }) => (
+  <React.Fragment>
   <div className="card">
     <header className="card-header has-background-black">
       <div className="card-header-title is-centered has-text-white">
@@ -192,6 +193,8 @@ const MatchFixture = ({ match, showStatistics }) => (
       />
     </footer>
   </div>
+  <br />
+  </React.Fragment>
 );
 
 export default MatchFixture;
