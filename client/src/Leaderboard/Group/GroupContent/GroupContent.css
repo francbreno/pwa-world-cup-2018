@@ -1,0 +1,5 @@
+.group-content {
+  display: flex;
+  flex: 1 100%;
+  flex-flow: row wrap;
+}

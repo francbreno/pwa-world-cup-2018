@@ -1,0 +1,9 @@
+.match-location {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.match-location > * {
+  flex: 1 100%;
+  text-align: center;
+}

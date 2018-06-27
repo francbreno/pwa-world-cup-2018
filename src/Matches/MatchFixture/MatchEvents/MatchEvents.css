@@ -1,8 +1,0 @@
-.match-events > * {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  /* border: 1px solid blue; */
-}

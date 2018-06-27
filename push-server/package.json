@@ -1,0 +1,16 @@
+{
+  "name": "push-server",
+  "version": "0.1.0",
+  "description": "web-push notifications server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "generate-vapid": "node_modules/web-push/src/cli.js generate-vapid-keys --json > vapid.json"
+  },
+  "author": "Breno",
+  "license": "ISC",
+  "dependencies": {
+    "urlsafe-base64": "^1.0.0",
+    "web-push": "^3.3.2"
+  }
+}

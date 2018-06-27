@@ -1,0 +1,34 @@
+.match-fixture {
+  display: flex;
+  flex-flow: row wrap;
+  /* border: 1px solid salmon; */
+  padding: 16px;
+}
+
+@media (min-width: 0px) and (min-width: 768px) {
+}
+
+/*
+@media (min-width: 769px) and (min-width: 1023px) {
+  .team-name {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) and (min-width: 1215px) {
+  .team-name {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1216px) and (min-width: 1407px) {
+  .team-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1408px) {
+  .team-name {
+    font-size: 2rem;
+  }
+} */

@@ -1,0 +1,18 @@
+.group-line {
+  display: flex;
+  flex: 1 100%;
+  align-items: center;
+
+  padding: 8px;
+}
+
+.group-line > * {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.group-line:first-child {
+  flex: 3;
+  justify-content: flex-start;
+}

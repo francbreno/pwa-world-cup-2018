@@ -1,0 +1,16 @@
+.event {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-flow: row wrap;
+
+  align-items: center;
+}
+
+.event > * {
+  padding: 2px;
+}
+
+.event-align-right {
+  justify-content: flex-end;
+  align-items: flex-start;
+}

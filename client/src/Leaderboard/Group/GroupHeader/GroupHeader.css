@@ -1,0 +1,18 @@
+.group-header {
+  display: flex;
+  flex: 1 100%;
+  justify-content: flex-end;
+
+  padding: 8px;
+}
+
+.group-header > * {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.group-header:first-child {
+  flex: 3;
+  align-self: flex-start;
+}

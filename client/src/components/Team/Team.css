@@ -1,0 +1,19 @@
+.match-team {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+
+  /* font-size: 3.2rem; */
+}
+
+.team-name {
+  font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1900 - 300)));
+  padding: 8px;
+}
+
+.team-align-right {
+  flex: 1 100%;
+  display: flex;
+  justify-content: flex-end;
+}
