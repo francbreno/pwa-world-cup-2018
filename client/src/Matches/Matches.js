@@ -12,7 +12,7 @@ class Matches extends React.Component {
   componentDidMount() {
     const { today } = this.props;
     const todayFilter = today ? 'today': '';
-    fetch(`http://worldcup.sfg.io/matches/${todayFilter}`)
+    fetch(`https://worldcup.sfg.io/matches/${todayFilter}`)
       .then(response => response.json())
       .then(matches => matches.filter(match => {
         return !(
