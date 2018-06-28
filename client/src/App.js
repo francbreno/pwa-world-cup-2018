@@ -1,14 +1,26 @@
 import React from 'react';
+import Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Toolbar from 'app/components/Toolbar';
-import Container from 'app/components/Container';
-import Home from 'app/Home';
-import AllMatches from 'app/AllMatches';
-import Leaderboard from 'app/Leaderboard';
+import Toolbar from 'components/Toolbar';
+import Container from 'components/Container';
+
+const Loading = () => <div>Loading...</div>;
+
+const Home = Loadable({
+  loader: () => import('app/Home'),
+  loading: Loading
+});
+const AllMatches = Loadable({
+  loader: () => import('app/AllMatches'),
+  loading: Loading
+});
+const Leaderboard = Loadable({
+  loader: () => import('app/Leaderboard'),
+  loading: Loading
+});
 
 import './App.css';
-import Logo from './pwa-logo.png';
 
 const App = () => (
   <Router>

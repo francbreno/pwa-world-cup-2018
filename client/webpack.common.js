@@ -6,10 +6,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
   // Ponto de entrada
   entry: {
-    app: './src/index.js',
-    home: './src/Home/index.js',
-    Leaderboard: './src/Leaderboard/index.js',
-    Matches: './src/Matches/index.js',
+    app: path.resolve(__dirname, "src/index.js")
   },
   plugins: [
     // Remove a pasta dist antes do build
@@ -46,10 +43,16 @@ module.exports = {
       ]
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   // arquivos de saída
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].bundle.js',
+    filename: '[name].bundle.js',
+    chunkFilename: "[name].chunk.js",
   },
   // configuração de import dos módulos pelo tipo
   module: {
@@ -71,8 +74,9 @@ module.exports = {
   },
   resolve: {
     alias: {
+      app: path.resolve(__dirname, 'src'),
       img: path.resolve(__dirname, 'src/img/'),
-      app: path.resolve(__dirname, 'src')
+      components: path.resolve(__dirname, 'src/components'),
     }
   }
 }
