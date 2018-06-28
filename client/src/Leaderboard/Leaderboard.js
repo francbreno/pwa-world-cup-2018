@@ -14,12 +14,7 @@ class Leaderboard extends React.Component {
 
   componentDidMount() {
     fetch(`https://worldcup.sfg.io/teams/group_results`)
-      .then(response => response.json())
-      .then(groups => {
-        return [
-          ...groups.map(group => group.group)
-        ]
-      })
+      .then(response => console.log(response.clone().json()) || response.json())
       .then(groups => this.setState(() => ({ groups })))
   }
 

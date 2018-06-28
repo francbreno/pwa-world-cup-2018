@@ -6,8 +6,7 @@ import './GroupContent.css';
 
 const GroupContent = ({ group }) => console.log(group) || (
   <div className="group-content">
-    {group.teams
-      .map(teamItem => teamItem.team)
+    {group.ordered_teams
       .map(team => <GroupLine key={team.fifa_code} team={team} />)}
   </div>
 );
