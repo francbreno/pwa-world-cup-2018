@@ -24,22 +24,32 @@ module.exports = {
       skipWaiting: true,
       swDest: 'sw.js',
       // external content caching
-      runtimeCaching: [{
-        urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io/),
-        handler: 'networkFirst',
-        options: {
-          cacheableResponse: {
-            statuses: [0, 200],
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io\/matches\/current/),
+          handler: 'networkFirst',
+          options: {
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
           },
         },
-        
-      }]
+        {
+          urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io/),
+          handler: 'staleWhileRevalidate',
+          options: {
+            cacheableResponse: {
+              statuses: [0, 200],
+            },
+          },
+        },
+      ]
     })
   ],
   // arquivos de saída
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].[hash].bundle.js',
   },
   // configuração de import dos módulos pelo tipo
   module: {
