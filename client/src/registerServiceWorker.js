@@ -1,7 +1,5 @@
 const SERVER_URL = 'http://localhost:3333'; 
 
-let swRegistration;
-
 const checkForPushSubscription = (registration) => 
   registration.pushManager.getSubscription().then(() => 
     console.log('update ui: already subscribed')
@@ -32,10 +30,9 @@ const getApplicationServerKey = () =>
 export default function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register("/sw.js")
-      .then(registration => swRegistration = registration)
       .then(registration => {
         console.log(`SW registered with scope: ${registration.scope}`);
-        checkForPushSubscription(swRegistration);
+        checkForPushSubscription(registration);
       }).catch(err => console.error(`SW registration failed: ${err}`));
   }
 };
