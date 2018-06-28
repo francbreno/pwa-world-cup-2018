@@ -3,7 +3,7 @@ import React from 'react';
 import StringHelper from 'app/helpers/string';
 import DateHelper from 'app/helpers/date';
 
-import Card from 'app/components/Card';
+import Card from 'components/Card';
 import MatchLocation from './MatchLocation';
 import MatchScore from './MatchScore';
 import MatchFacts from './MatchFacts';
@@ -11,7 +11,7 @@ import MatchTime from 'app/Matches/MatchFixture/MatchTime';
 
 import './MatchFixture.css';
 
-const MatchFixture = ({ match, showStatistics, showEvents, showTime, resumed = false }) => (
+const MatchFixture = ({ match, showStatistics, showEvents, showTime, compact = false, compactScore = false }) => (
   <React.Fragment>
     <Card
       header={() => (
@@ -19,6 +19,7 @@ const MatchFixture = ({ match, showStatistics, showEvents, showTime, resumed = f
           venue={match.venue}
           location={match.location}
           datetime={match.datetime}
+          weather={match.weather}
         />
       )}
 
@@ -29,6 +30,7 @@ const MatchFixture = ({ match, showStatistics, showEvents, showTime, resumed = f
             visible
           />
           <MatchScore
+            compact={compactScore}
             homeTeam={match.home_team}
             awayTeam={match.away_team}
             matchStatus={match.status}
@@ -37,7 +39,7 @@ const MatchFixture = ({ match, showStatistics, showEvents, showTime, resumed = f
       )}
 
       footer={() => {
-        return !resumed ?
+        return !(compact || match.status === 'future') ?
           <MatchFacts
             showStatistics={showStatistics}
             showEvents={showEvents}

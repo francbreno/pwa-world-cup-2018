@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from 'app/components/Container';
+import Container from 'components/Container';
 import Matches from 'app/Matches';
 import LiveMatches from 'app/LiveMatches';
 

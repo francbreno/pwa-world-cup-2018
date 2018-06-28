@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Container from 'app/components/Container';
-import Card from 'app/components/Card';
+import Container from 'components/Container';
+import Card from 'components/Card';
 import Group from './Group';
 
 import './Leaderboard.css';

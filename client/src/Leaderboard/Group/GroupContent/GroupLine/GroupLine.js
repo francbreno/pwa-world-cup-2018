@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Team from 'app/components/Team';
+import Team from 'components/Team';
 
 import './GroupLine.css'
 

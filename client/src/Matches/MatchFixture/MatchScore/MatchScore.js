@@ -2,14 +2,14 @@ import React from 'react';
 
 import './MatchScore.css';
 
-import Team from 'app/components/Team';
+import Team from 'components/Team';
 import Score from './Score';
 
-const MatchScore = ({ homeTeam, awayTeam, matchStatus = 'future' }) => (
+const MatchScore = ({ homeTeam, awayTeam, matchStatus = 'future', compact = false }) => (
   <div className="match-score">
-    <Team team={homeTeam} />
+    <Team team={homeTeam} compact={compact} />
     <Score homeGoals={homeTeam.goals} awayGoals={awayTeam.goals} status={matchStatus} />
-    <Team team={awayTeam} away />
+    <Team team={awayTeam} compact={compact} away />
   </div>
 );
 

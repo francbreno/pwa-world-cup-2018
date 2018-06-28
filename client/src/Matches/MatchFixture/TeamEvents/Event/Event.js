@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Event.css';
 
-import Image from 'app/components/Image';
+import Image from 'components/Image';
 
 const EventIcon = ({ eventName }) => (
   <Image path={require(`img/events/${eventName}.png`)} />

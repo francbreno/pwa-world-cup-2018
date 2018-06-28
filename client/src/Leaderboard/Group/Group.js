@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card from 'app/components/Card';
+import Card from 'components/Card';
 import GroupHeader from './GroupHeader';
 import GroupContent from './GroupContent';
 

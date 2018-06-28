@@ -5,25 +5,8 @@ nav {
 
   padding: 8px;
 
-  background-color: black;
-  color: white;
-
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 100;
 
   margin-bottom: 8px;
-}
-
-nav > span:nth-child(1) {
-  margin-right: auto;
-}
-
-nav > span {
-  font-size: 1.8rem;
-
-  padding: 8px;
-}
-
-nav > span > a {
-  color: red;
 }

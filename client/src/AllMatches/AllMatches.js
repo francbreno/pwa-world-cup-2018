@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container from 'app/components/Container';
+import Container from 'components/Container';
 import Matches from 'app/Matches';
 
 import './AllMatches.css';
@@ -9,7 +9,7 @@ const AllMatches = () => (
   <section className="section">
     <Container>
       <h1 className="title">All Matches</h1>
-      <Matches resumed />
+      <Matches compact />
     </Container>
   </section>
 );

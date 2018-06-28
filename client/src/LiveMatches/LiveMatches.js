@@ -50,7 +50,9 @@ class LiveMatches extends React.Component {
         <MatchFixture
           showStatistics 
           key={match.fifa_id} 
-          match={match} />)
+          match={match}
+          compactScore />
+        )
       )
     );
   }

@@ -4,6 +4,13 @@ import './MatchStatistics.css';
 
 import StringHelper from 'app/helpers/string';
 
+const IGNORED_STAT_KEYS = [
+  'country',
+  'starting_eleven',
+  'substitutes',
+  'tactics',
+];
+
 const MatchStatistics = ({
   show = false,
   homeTeamStatistics,
@@ -12,7 +19,7 @@ const MatchStatistics = ({
   show && <div className="match-statistics has-background-black has-text-white">
     <span>Statistics</span>
       {homeTeamStatistics && Object.keys(homeTeamStatistics)
-        .filter(key => key !== 'country')
+        .filter(key => !(IGNORED_STAT_KEYS.includes(key)))
         .map(key => (
         <div key={key}>
           <span>{homeTeamStatistics[key]}</span>

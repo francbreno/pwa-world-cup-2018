@@ -2,7 +2,7 @@ import React from 'react';
 
 import './MatchTeam.css';
 
-import CountryFlag from 'app/components/CountryFlag';
+import CountryFlag from 'components/CountryFlag';
 
 const MatchTeam = ({ team, away = false }) => {
   return (

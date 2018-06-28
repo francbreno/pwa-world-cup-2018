@@ -29,10 +29,10 @@ class Matches extends React.Component {
 
   render() {
     const { matches } = this.state;
-    const { resumed } = this.props;
+    const { compact } = this.props;
     return (
       <div className="matches">
-        {matches.map(match => <MatchFixture key={match.fifa_id} match={match} resumed={resumed} />)}
+        {matches.map(match => <MatchFixture key={match.fifa_id} match={match} compact={compact} />)}
       </div>
     );
   }
