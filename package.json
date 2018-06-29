@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-push-server": "node push-server/index.js"
+    "start-pwa": "node client/index.js"
   },
   "author": "Breno",
   "license": "ISC"
