@@ -29,7 +29,7 @@ const getApplicationServerKey = () =>
 
 export default function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("/sw.js")
+    navigator.serviceWorker.register("sw.js")
       .then(registration => {
         console.log(`SW registered with scope: ${registration.scope}`);
         checkForPushSubscription(registration);
