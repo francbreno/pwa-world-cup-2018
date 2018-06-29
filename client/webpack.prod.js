@@ -21,7 +21,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
+      filename: '[name].css',
       chunkFilename: '[id].css',
     }),
     new webpack.DefinePlugin({
@@ -34,16 +34,17 @@ module.exports = merge(common, {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
-              sourceMap: true,
-              minimize: true
-            }
-          },
+          // {
+          //   loader: 'css-loader',
+          //   options: {
+          //     modules: true,
+          //     importLoaders: 1,
+          //     localIdentName: "[name]_[local]_[hash:base64]",
+          //     sourceMap: true,
+          //     minimize: true
+          //   }
+          // },
+          'css-loader',
         ]
       }
     ]

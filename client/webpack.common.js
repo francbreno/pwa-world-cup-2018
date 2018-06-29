@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 
 module.exports = {
   // Ponto de entrada
@@ -13,13 +14,32 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     // Gera arquivo html do build a partir de um template
     new HtmlWebpackPlugin({
-      hash: true,
       template: 'public/index.html',
+    }),
+    // Gera o arquivo manifest.json
+    new WebpackPwaManifest({
+      name: 'World Cup 2018 PWA',
+      short_name: 'WC2018PWA',
+      description: 'A simple World Cup 2018 PWA',
+      start_url: '/pwa-world-cup-2018',
+      background_color: '#ffffff',
+      theme_color: '#3273dc',
+      icons: [
+        {
+          src: path.resolve('src/img/wc_2018.png'),
+          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
+        },
+        {
+          src: path.resolve('src/img/wc_2018.png'),
+          size: '1024x1024' // you can also use the specifications pattern
+        }
+      ]
     }),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
       swDest: 'sw.js',
+      navigateFallback: '/pwa-world-cup-2018',
       // external content caching
       runtimeCaching: [
         {
