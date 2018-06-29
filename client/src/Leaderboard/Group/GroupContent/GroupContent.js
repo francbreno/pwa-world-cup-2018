@@ -4,7 +4,7 @@ import GroupLine from './GroupLine';
 
 import './GroupContent.css';
 
-const GroupContent = ({ group }) => console.log(group) || (
+const GroupContent = ({ group }) => (
   <div className="group-content">
     {group.ordered_teams
       .map(team => <GroupLine key={team.fifa_code} team={team} />)}

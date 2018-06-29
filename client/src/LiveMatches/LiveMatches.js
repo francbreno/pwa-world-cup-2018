@@ -21,7 +21,6 @@ class LiveMatches extends React.Component {
   }
 
   getCurrentMatches = () => {
-    console.log('updating match');
     return fetch('https://worldcup.sfg.io/matches/current')
       .then(response => response.json())
       .then(matches => 
