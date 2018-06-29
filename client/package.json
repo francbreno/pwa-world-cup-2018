@@ -11,8 +11,7 @@
     "serve-build": "npm run build && rm -Rf ../server/public && cp -R ./dist ../server/public && node ../server/index.js",
     "start": "webpack-dev-server --open --history-api-fallback --config webpack.dev.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "remove-page": "gh-pages --remove '/'"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "bulma": "^0.7.1",
