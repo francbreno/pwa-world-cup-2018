@@ -40,10 +40,12 @@ export default class MatchesLoader extends React.Component {
     const { matches, waiting } = this.state;
     const { compact } = this.props;
     const hasMatches =  Array.isArray(matches) && matches.length > 0;
+    console.log(this.NAME, matches);
     return (
       <div className="matches">
         {waiting && <Message type="info">Loading...</Message>}
-        {!waiting && this.props.children(this.state)}
+        {!waiting && !ArrayUtil.isEmpty(matches) && this.props.children(this.state)}
+        {!waiting && ArrayUtil.isEmpty(matches) && <Message type="info">no matches</Message>}
       </div>
     );
   }
