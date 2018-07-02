@@ -21,7 +21,7 @@ module.exports = {
       name: 'World Cup 2018 PWA',
       short_name: 'WC2018PWA',
       description: 'A simple World Cup 2018 PWA',
-      start_url: '/pwa-world-cup-2018',
+      start_url: '/',
       background_color: '#ffffff',
       theme_color: '#3273dc',
       icons: [
@@ -39,7 +39,7 @@ module.exports = {
       clientsClaim: true,
       skipWaiting: true,
       swDest: 'sw.js',
-      navigateFallback: '/pwa-world-cup-2018',
+      navigateFallback: '/',
       // external content caching
       runtimeCaching: [
         {
