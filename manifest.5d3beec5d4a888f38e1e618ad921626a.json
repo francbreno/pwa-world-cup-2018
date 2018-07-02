@@ -1,0 +1,47 @@
+{
+  "icons": [
+    {
+      "src": "icon_1024x1024.bd017e7cd93db3165c255e0a667244da.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_512x512.198c1cadedaea8888bdc7ed90e2911b5.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_384x384.3fe33ca76066e31609f7fbb8cf514723.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_256x256.79e42d67331157d8fd5b98dfb6415c0d.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.28c352fface4997ada5b44eb20ad5891.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_128x128.798d6d9f97b7ebe107d0a38e3a1834d6.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_96x96.1c0c9fe83b1417378978b62f68fd6078.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "name": "World Cup 2018 PWA",
+  "short_name": "WC2018PWA",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/pwa-world-cup-2018",
+  "description": "A simple World Cup 2018 PWA",
+  "background_color": "#ffffff",
+  "theme_color": "#3273dc"
+}
