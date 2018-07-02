@@ -42,9 +42,9 @@ export default class Toolbar extends React.Component {
           
           <div className={navbarMenuStyleClasses}>
             <div className="navbar-end">
-              <Link className="navbar-item has-text-white" to="/">Home</Link>
-              <Link className="navbar-item has-text-white" to="/leaderboard">Leaderboard</Link>
-              <Link className="navbar-item has-text-white" to="/matches">All Matches</Link>
+              <Link className="navbar-item has-text-link" to="/">Home</Link>
+              <Link className="navbar-item has-text-link" to="/leaderboard">Leaderboard</Link>
+              <Link className="navbar-item has-text-link" to="/matches">All Matches</Link>
             </div>
           </div>
         </div>
