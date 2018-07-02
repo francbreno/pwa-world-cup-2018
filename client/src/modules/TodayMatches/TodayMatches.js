@@ -4,16 +4,14 @@ import Container from 'components/Container';
 import MatchesLoader from 'modules/MatchesLoader';
 import MatchFixture from 'components/MatchFixture';
 
-import './AllMatches.css';
-
-const AllMatches = () => (
+const TodayMatches = () => (
   <section className="section">
     <Container>
-      <h1 className="title">All Matches</h1>
-      <MatchesLoader>
+      <h1 className="title">Today Matches</h1>
+      <MatchesLoader filter="today">
         {({ matches }) => 
           matches.map(match => 
-            <MatchFixture key={match.fifa_id} match={match} compact />
+            <MatchFixture key={match.fifa_id} match={match} />
           )
         }
       </MatchesLoader>
@@ -21,4 +19,4 @@ const AllMatches = () => (
   </section>
 );
 
-export default AllMatches;
+export default TodayMatches;
