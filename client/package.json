@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "sample pwa app caching strategies",
   "author": "Breno",
-  "homepage": "https://github.com/francbreno/pwa-world-cup-2018",
+  "homepage": "https://francbreno.github.io/pwa-world-cup-2018",
   "private": true,
   "license": "MIT",
   "scripts": {

@@ -20,17 +20,15 @@ const Leaderboard = Loadable({
   loading: Loading
 });
 
-console.log('basename', process.env.PUBLIC_URL);
-
 import './App.css';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
     <div>
       <Toolbar />
-      <Route path="/" component={Home} exact />
-      <Route path="/matches" component={AllMatches} />
-      <Route path="/leaderboard" component={Leaderboard} />
+      <Route path="" component={Home} exact />
+      <Route path="matches" component={AllMatches} />
+      <Route path="leaderboard" component={Leaderboard} />
     </div>
   </Router>
 );
