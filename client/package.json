@@ -11,7 +11,8 @@
     "serve-build": "npm run build && rm -Rf ../server/public && cp -R ./dist ../server/public && node ../server/index.js",
     "start": "webpack-dev-server --open --history-api-fallback --config webpack.dev.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy-ghp": "gh-pages -d dist",
+    "deploy-surge": "npm run build && cd dist && surge --domain francbreno-pwa-wc2018.surge.sh"
   },
   "dependencies": {
     "bulma": "^0.7.1",
@@ -36,6 +37,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
+    "preload-webpack-plugin": "^2.3.0",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.12.0",
