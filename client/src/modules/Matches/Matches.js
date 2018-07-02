@@ -1,6 +1,9 @@
 import React from 'react';
 
-import MatchFixture from './MatchFixture';
+import ArrayUtil from 'helpers/array';
+
+import MatchFixture from 'components/MatchFixture';
+import Message from 'components/Message';
 
 import './Matches.css';
 
@@ -30,9 +33,11 @@ class Matches extends React.Component {
   render() {
     const { matches } = this.state;
     const { compact } = this.props;
+    const hasMatches =  Array.isArray(matches) && matches.length > 0;
     return (
       <div className="matches">
-        {matches.map(match => <MatchFixture key={match.fifa_id} match={match} compact={compact} />)}
+        {hasMatches && matches.map(match => <MatchFixture key={match.fifa_id} match={match} compact={compact} />)}
+        {!hasMatches && <Message>No matches found</Message>}
       </div>
     );
   }

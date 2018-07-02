@@ -10,25 +10,45 @@ import Logo from 'img/wc_2018.png';
   //   <span>Matches</span>
   //   <span>Leaderboard</span>
   // </nav>
-const Toolbar = () => (
-  <nav className="navbar is-fixed-top is-link" role="navigation" aria-label="main navigation">
-    <div className="navbar-brand">
-      <a className="navbar-item" href="https://bulma.io">
-      <img src={Logo} alt='PWA sample app' />
-      </a>
+export default class Toolbar extends React.Component {
 
-      <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div className="navbar-menu">
-      <Link className="navbar-item has-text-white" to="/">Home</Link>
-      <Link className="navbar-item has-text-white" to="/leaderboard">Leaderboard</Link>
-      <Link className="navbar-item has-text-white" to="/matches">All Matches</Link>
-    </div>
-  </nav>
-);
+  state = {
+    activeMenu: false,
+  }
 
-export default Toolbar;
+  handleOpenMenu = event => console.log('hahaah') || this.setState((prevState) => ({
+    activeMenu: !prevState.activeMenu,
+  }))
+
+  render() {
+    const { activeMenu } = this.state;
+    const activeMenuStyleClass = activeMenu ? 'is-active' : '';
+    const burgerMenuStyleClasses = `navbar-burger burger ${activeMenuStyleClass}`;
+    const navbarMenuStyleClasses = `navbar-menu ${activeMenuStyleClass}`;
+    return (
+      <nav className="navbar is-fixed-top is-link" role="navigation" aria-label="main navigation">
+        <div className="container">
+          <div className="navbar-brand">
+            <a className="navbar-item" href="#">
+              <img src={Logo} alt='PWA World Cup Russia 2018' />
+            </a>
+    
+            <span className={burgerMenuStyleClasses} data-target="navMenu" onClick={this.handleOpenMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          
+          <div className={navbarMenuStyleClasses}>
+            <div className="navbar-end">
+              <Link className="navbar-item has-text-white" to="/">Home</Link>
+              <Link className="navbar-item has-text-white" to="/leaderboard">Leaderboard</Link>
+              <Link className="navbar-item has-text-white" to="/matches">All Matches</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+}

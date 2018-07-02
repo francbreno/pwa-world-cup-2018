@@ -2,7 +2,7 @@ import React from 'react';
 
 import './LiveMatches.css';
 
-import MatchFixture from 'app/Matches/MatchFixture';
+import MatchFixture from 'components/MatchFixture';
 
 class LiveMatches extends React.Component {
   state = {

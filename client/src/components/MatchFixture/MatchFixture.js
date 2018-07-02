@@ -7,7 +7,7 @@ import Card from 'components/Card';
 import MatchLocation from './MatchLocation';
 import MatchScore from './MatchScore';
 import MatchFacts from './MatchFacts';
-import MatchTime from 'app/Matches/MatchFixture/MatchTime';
+import MatchTime from './MatchTime';
 
 import './MatchFixture.css';
 

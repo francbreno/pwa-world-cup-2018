@@ -8,27 +8,27 @@ import Container from 'components/Container';
 const Loading = () => <div>Loading...</div>;
 
 const Home = Loadable({
-  loader: () => import('app/Home'),
+  loader: () => import('modules/Home'),
   loading: Loading
 });
 const AllMatches = Loadable({
-  loader: () => import('app/AllMatches'),
+  loader: () => import('modules/AllMatches'),
   loading: Loading
 });
 const Leaderboard = Loadable({
-  loader: () => import('app/Leaderboard'),
+  loader: () => import('modules/Leaderboard'),
   loading: Loading
 });
 
 import './App.css';
 
 const App = () => (
-  <Router basename={process.env.PUBLIC_URL}>
+  <Router>
     <div>
       <Toolbar />
-      <Route path="" component={Home} exact />
-      <Route path="matches" component={AllMatches} />
-      <Route path="leaderboard" component={Leaderboard} />
+      <Route path="/" component={Home} exact />
+      <Route path="/matches" component={AllMatches} />
+      <Route path="/leaderboard" component={Leaderboard} />
     </div>
   </Router>
 );

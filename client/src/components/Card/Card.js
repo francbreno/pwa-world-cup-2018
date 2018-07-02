@@ -4,7 +4,7 @@ import './Card.css';
 
 const Card = ({ header: Header, content: Content, footer: Footer }) => (
   <div className="card">
-    <header className="card-header has-background-black">
+    <header className="card-header has-background-link">
       <Header />
     </header>
     <div className="card-content">

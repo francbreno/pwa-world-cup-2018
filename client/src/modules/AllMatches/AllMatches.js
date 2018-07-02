@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Container from 'components/Container';
-import Matches from 'app/Matches';
+import Matches from 'modules/Matches';
 
 import './AllMatches.css';
 

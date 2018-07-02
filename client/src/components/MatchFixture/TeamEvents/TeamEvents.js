@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Event from 'app/Matches/MatchFixture/TeamEvents/Event';
+import Event from './Event';
 
 const TeamEvents = ({ events = [], awayTeam = false }) => 
   events.map(event => 

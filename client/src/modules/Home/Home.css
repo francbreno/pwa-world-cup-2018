@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+  .inverse-on-mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

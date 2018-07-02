@@ -2,7 +2,7 @@ import React from 'react';
 
 import './MatchEvents.css';
 
-import TeamEvents from 'app/Matches/MatchFixture/TeamEvents';
+import TeamEvents from 'components/MatchFixture/TeamEvents';
 
 const MatchEvents = ({ homeTeamEvents, awayTeamEvents }) => (
   <div className="match-events">
