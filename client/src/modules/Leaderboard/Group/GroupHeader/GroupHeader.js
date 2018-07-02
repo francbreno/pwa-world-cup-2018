@@ -3,7 +3,7 @@ import React from 'react';
 import './GroupHeader.css';
 
 const GroupHeader = () => (
-  <div className="group-header">
+  <div className="group-header has-text-white">
     <span></span>
     <span>GP</span>
     <span>W</span>
