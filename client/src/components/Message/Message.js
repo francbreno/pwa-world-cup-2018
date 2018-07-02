@@ -7,7 +7,7 @@ const TYPES = [
   'danger',
 ];
 
-const defineTypeStyle = type => TYPES[type] ? `is-${type}` : '';
+const defineTypeStyle = type => TYPES.includes(type) ? `is-${type}` : '';
 
 const Message = ({ type, title, children, bodyOnly=false }) => {
   const typeStyleClass = defineTypeStyle(type);
