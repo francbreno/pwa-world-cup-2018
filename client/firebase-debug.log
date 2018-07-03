@@ -1,0 +1,72 @@
+[debug] [2018-07-02T12:14:34.125Z] ----------------------------------------------------------------------
+[debug] [2018-07-02T12:14:34.127Z] Command:       /home/breno/.nvm/versions/node/v9.3.0/bin/node /home/breno/.yarn/bin/firebase deploy
+[debug] [2018-07-02T12:14:34.127Z] CLI Version:   3.19.1
+[debug] [2018-07-02T12:14:34.127Z] Platform:      linux
+[debug] [2018-07-02T12:14:34.127Z] Node Version:  v9.3.0
+[debug] [2018-07-02T12:14:34.127Z] Time:          Mon Jul 02 2018 09:14:34 GMT-0300 (-03)
+[debug] [2018-07-02T12:14:34.127Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-02T12:14:34.134Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-02T12:14:34.134Z] > authorizing via signed-in user
+[debug] [2018-07-02T12:14:34.135Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-wc2018  
+  
+ Mon Jul 02 2018 09:14:34 GMT-0300 (-03)
+[debug] [2018-07-02T12:14:35.871Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:14:35.872Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pwa-wc2018/tokens  
+  
+ Mon Jul 02 2018 09:14:35 GMT-0300 (-03)
+[debug] [2018-07-02T12:14:37.094Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:19:01.055Z] ----------------------------------------------------------------------
+[debug] [2018-07-02T12:19:01.058Z] Command:       /home/breno/.nvm/versions/node/v9.3.0/bin/node /home/breno/.yarn/bin/firebase deploy --debug
+[debug] [2018-07-02T12:19:01.058Z] CLI Version:   3.19.1
+[debug] [2018-07-02T12:19:01.059Z] Platform:      linux
+[debug] [2018-07-02T12:19:01.059Z] Node Version:  v9.3.0
+[debug] [2018-07-02T12:19:01.059Z] Time:          Mon Jul 02 2018 09:19:01 GMT-0300 (-03)
+[debug] [2018-07-02T12:19:01.059Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-02T12:19:01.066Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-02T12:19:01.066Z] > authorizing via signed-in user
+[debug] [2018-07-02T12:19:01.068Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-wc2018  
+  
+ Mon Jul 02 2018 09:19:01 GMT-0300 (-03)
+[debug] [2018-07-02T12:19:02.296Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:19:02.297Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pwa-wc2018/tokens  
+  
+ Mon Jul 02 2018 09:19:02 GMT-0300 (-03)
+[debug] [2018-07-02T12:19:03.721Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:20:44.910Z] ----------------------------------------------------------------------
+[debug] [2018-07-02T12:20:44.911Z] Command:       /home/breno/.nvm/versions/node/v9.3.0/bin/node /home/breno/.yarn/bin/firebase deploy
+[debug] [2018-07-02T12:20:44.912Z] CLI Version:   3.19.1
+[debug] [2018-07-02T12:20:44.912Z] Platform:      linux
+[debug] [2018-07-02T12:20:44.912Z] Node Version:  v9.3.0
+[debug] [2018-07-02T12:20:44.912Z] Time:          Mon Jul 02 2018 09:20:44 GMT-0300 (-03)
+[debug] [2018-07-02T12:20:44.912Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-02T12:20:44.918Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-02T12:20:44.918Z] > authorizing via signed-in user
+[debug] [2018-07-02T12:20:44.920Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-wc2018  
+  
+ Mon Jul 02 2018 09:20:44 GMT-0300 (-03)
+[debug] [2018-07-02T12:20:47.247Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:20:47.249Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pwa-wc2018/tokens  
+  
+ Mon Jul 02 2018 09:20:47 GMT-0300 (-03)
+[debug] [2018-07-02T12:20:48.555Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:21:32.987Z] ----------------------------------------------------------------------
+[debug] [2018-07-02T12:21:32.988Z] Command:       /home/breno/.nvm/versions/node/v9.3.0/bin/node /home/breno/.yarn/bin/firebase deploy
+[debug] [2018-07-02T12:21:32.989Z] CLI Version:   3.19.1
+[debug] [2018-07-02T12:21:32.989Z] Platform:      linux
+[debug] [2018-07-02T12:21:32.989Z] Node Version:  v9.3.0
+[debug] [2018-07-02T12:21:32.989Z] Time:          Mon Jul 02 2018 09:21:32 GMT-0300 (-03)
+[debug] [2018-07-02T12:21:32.989Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-02T12:21:32.995Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-02T12:21:32.995Z] > authorizing via signed-in user
+[debug] [2018-07-02T12:21:32.997Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-wc2018  
+  
+ Mon Jul 02 2018 09:21:32 GMT-0300 (-03)
+[debug] [2018-07-02T12:21:34.176Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-02T12:21:34.177Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pwa-wc2018/tokens  
+  
+ Mon Jul 02 2018 09:21:34 GMT-0300 (-03)
+[debug] [2018-07-02T12:21:35.401Z] <<< HTTP RESPONSE 200

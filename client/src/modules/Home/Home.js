@@ -7,19 +7,18 @@ import TodayMatches from 'modules/TodayMatches';
 import LiveMatches from 'modules/LiveMatches';
 
 const Home = () => (
-    <div className="columns inverse-on-mobile">
-      <div className="column">
-        <TodayMatches />
+  <section className="section">
+    <Container>
+      <div className="columns inverse-on-mobile">
+        <div className="column is-half">
+          <TodayMatches />
+        </div>
+        <div className="column is-half">
+          <LiveMatches />
+        </div>
       </div>
-      <div className="column is-one-quarter is-centered">
-        <section className="section">
-          <Container>
-          <h1 className="title">Live Match</h1>
-            <LiveMatches />
-          </Container>
-        </section>
-      </div>
-    </div>
+    </Container>
+  </section>
 );
 
 export default Home;
