@@ -2,8 +2,8 @@ import React from 'react';
 
 import './Container.css';
 
-const Container = ({ children }) => (
-  <div className="container is-fluid">
+const Container = ({ children, fluid }) => (
+  <div className={`container ${fluid ? 'is-fluid' : ''}`}>
     {children}
   </div>
 );
