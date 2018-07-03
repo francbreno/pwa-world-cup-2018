@@ -1,22 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import PopupMenu from './PopupMenu';
+import Container from 'components/Container';
+
 import './Toolbar.css';
 import Logo from 'img/wc_2018.png';
 
-  // <nav>
-  //   <span><img src={Logo} alt='PWA sample app' /></span>
-  //   <span><a href="">Home</a></span>
-  //   <span>Matches</span>
-  //   <span>Leaderboard</span>
-  // </nav>
 export default class Toolbar extends React.Component {
 
   state = {
     activeMenu: false,
   }
 
-  handleOpenMenu = event => console.log('hahaah') || this.setState((prevState) => ({
+  handleOpenMenu = event => this.setState((prevState) => ({
     activeMenu: !prevState.activeMenu,
   }))
 
@@ -24,14 +21,13 @@ export default class Toolbar extends React.Component {
     const { activeMenu } = this.state;
     const activeMenuStyleClass = activeMenu ? 'is-active' : '';
     const burgerMenuStyleClasses = `navbar-burger burger ${activeMenuStyleClass}`;
-    const navbarMenuStyleClasses = `navbar-menu ${activeMenuStyleClass}`;
     return (
       <nav className="navbar is-fixed-top is-link" role="navigation" aria-label="main navigation">
-        <div className="container">
+        <Container fluid>
           <div className="navbar-brand">
-            <a className="navbar-item" href="#">
-              <img src={Logo} alt='PWA World Cup Russia 2018' />
-            </a>
+            <span className="navbar-item" href="#">
+              <img src={Logo} alt='PWA World Cup Russia 2018' height="56" />
+            </span>
     
             <span className={burgerMenuStyleClasses} data-target="navMenu" onClick={this.handleOpenMenu}>
               <span></span>
@@ -40,14 +36,11 @@ export default class Toolbar extends React.Component {
             </span>
           </div>
           
-          <div className={navbarMenuStyleClasses}>
-            <div className="navbar-end">
-              <Link onClick={this.handleOpenMenu} className="navbar-item has-text-link" to="/">Home</Link>
-              <Link onClick={this.handleOpenMenu} className="navbar-item has-text-link" to="/leaderboard">Leaderboard</Link>
-              <Link onClick={this.handleOpenMenu} className="navbar-item has-text-link" to="/matches">All Matches</Link>
-            </div>
-          </div>
-        </div>
+          <PopupMenu
+            onMenuClick={this.handleOpenMenu}
+            active={activeMenu}
+          />
+        </Container>
       </nav>
     );
   }
