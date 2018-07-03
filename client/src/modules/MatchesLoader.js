@@ -19,7 +19,6 @@ export default class MatchesLoader extends React.Component {
 
   componentDidMount() {
     const { filter } = this.props;
-    console.log(`https://worldcup.sfg.io/matches/${getFilter(filter)}`);
     fetch(`https://worldcup.sfg.io/matches/${getFilter(filter)}`)
       .then(response => response.json())
       .then(matches => matches.filter(match => {
@@ -40,7 +39,6 @@ export default class MatchesLoader extends React.Component {
     const { matches, waiting } = this.state;
     const { compact } = this.props;
     const hasMatches =  Array.isArray(matches) && matches.length > 0;
-    console.log(this.NAME, matches);
     return (
       <div className="matches">
         {waiting && <Message type="info">Loading...</Message>}

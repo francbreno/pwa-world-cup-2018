@@ -21,7 +21,6 @@ const resolvePublicURL = (appDirectory) => {
   const packageJson = path.resolve(appDirectory, 'package.json');
   const homepageURL = require(packageJson).homepage;
   const pathName = url.parse(homepageURL).pathname;
-  console.log(pathName);
   return ensureSlash(pathName);
 };
 
