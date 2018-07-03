@@ -9,7 +9,7 @@ import './Group.css';
 const Group = ({ group }) => (
   <div className="group">
     <Card
-      header={() => <GroupHeader />}
+      header={() => <GroupHeader groupLetter={group.letter} />}
       content={() => <GroupContent group={group} />}
     />
   </div>

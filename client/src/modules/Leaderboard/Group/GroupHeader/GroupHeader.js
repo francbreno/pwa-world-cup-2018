@@ -2,9 +2,9 @@ import React from 'react';
 
 import './GroupHeader.css';
 
-const GroupHeader = () => (
+const GroupHeader = ({ groupLetter }) => (
   <div className="group-header has-text-white">
-    <span></span>
+    <span>Group {groupLetter}</span>
     <span>GP</span>
     <span>W</span>
     <span>D</span>
