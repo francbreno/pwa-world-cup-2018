@@ -7,9 +7,10 @@ export default class Timer extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => 
-      this.setState((prevState) => { minutes: prevState.minutes + 1 }), 
-      this.props.waitMinutes
-    );
+      this.setState((prevState) => ({
+        minutes: prevState.minutes + 1 
+      }) 
+    ), this.props.waitMinutes);
   }
 
   componentWillUnmount() {
@@ -17,6 +18,7 @@ export default class Timer extends React.Component {
   }
 
   render() {
+    console.log(this.state.minutes);
     return this.props.children;
   }
 }
