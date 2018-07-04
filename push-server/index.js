@@ -1,38 +1,45 @@
-const http = require('http');
-const push = require('./push');
+const express = require('express');
+const cors = require('cors')
+const bodyParser = require('body-parser');
+const webpush = require('web-push');
 
-http.createServer((req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  
-  const {url, method} = request;
+webpush.setVapidDetails(
+  'mailto:francbreno@gmail.com',
+  process.env.PUBLIC_VAPID_KEY,
+  process.env.PRIVATE_VAPID_KEY,
+);
 
-  // ENDPOINTS
+const sendNotification = (subscription, data) => {
+  console.log('sending new notification');
+  webpush
+    .sendNotification(subscription, JSON.stringify(data))
+    .catch(err => console.log('error sending notification', err));
+}
 
-  // Subscription
-  if (method === 'POST' && url.match(/^\/subscribe\/?/)) {
-    let body = [];
+let subscription;
 
-    request
-      .on('data', chunk => body.push(chunk))
-      .on('end', () => {
-        res.end('Subscribed');
-      });
-  } // Public Key
-  else if (url.match(/^\/key\/?/)) {
-    // Get key from push
-    const key = push.getKey();
-    res.end(key);
-  } else if ( method === 'POST' && url.match(/^\/push\/?/)) {
-    let body = [];
+const app = express();
 
-    request
-      .on('data', chunk => body.push(chunk))
-      .on('end', () => {
-        res.end('Push Sent');
-      });
-  } else {
-    res.status = 404;
-    res.end('Error: Unknown Request');
-  }
+app.use(cors());
+app.use(bodyParser.json());
 
-}).listen(3333, () => console.log('Push-Server is up and running. Ready to send notifications'));
+app.post('/subscription', (req, res) => {
+  subscription = req.body;
+  res.sendStatus(201);
+  console.log('received new subscription', subscription);
+
+  const notificationData = {
+    title: 'Test Notification',
+    body: 'The data that you not required, sir!',
+    icon: 'https://api.fifa.com/api/v1/picture/tournaments-sq-4/254645_w'
+  };
+
+  sendNotification(subscription, notificationData);
+});
+
+app.delete('/subscription', (req, res) => {
+  subscription = null;
+  res.sendStatus(200);
+});
+
+app.listen(3000, () => console.log('push server is running'));
