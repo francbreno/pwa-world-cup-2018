@@ -6,7 +6,7 @@ const StageMatches = ({ stage, matches }) => (
   <React.Fragment>
     <h1 className="title">{stage}</h1>
     {matches.map(match =>
-      <MatchFixture key={match.fifa_id} match={match} compact />
+      <MatchFixture key={match.fifa_id} cupMatch={match} compact />
     )}
   </React.Fragment>
 );

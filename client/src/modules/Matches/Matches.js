@@ -2,7 +2,6 @@ import React from 'react';
 
 import Container from 'components/Container';
 import MatchesLoader from 'modules/MatchesLoader';
-import MatchFixture from 'components/MatchFixture';
 import StagesTabs from './StagesTabs';
 import StagesHelper from 'helpers/stages';
 

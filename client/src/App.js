@@ -15,6 +15,10 @@ const Matches = Loadable({
   loader: () => import('modules/Matches'),
   loading: Loading
 });
+const Match = Loadable({
+  loader: () => import('modules/Match'),
+  loading: Loading
+});
 const Leaderboard = Loadable({
   loader: () => import('modules/Leaderboard'),
   loading: Loading
@@ -26,13 +30,14 @@ const App = () => (
   <Router>
     <div>
       <Toolbar />
-      <Switch>
         <Container>
-          <Route path="/" component={Home} exact />
-          <Route path="/matches" component={Matches} />
-          <Route path="/leaderboard" component={Leaderboard} />
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/matches/:id" component={Home} />
+            <Route path="/matches" component={Matches} />
+            <Route path="/leaderboard" component={Leaderboard} />
+          </Switch>
         </Container>
-      </Switch>
     </div>
   </Router>
 );

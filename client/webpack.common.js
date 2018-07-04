@@ -94,11 +94,11 @@ module.exports = {
   },
   resolve: {
     alias: {
-      app: path.resolve(__dirname, 'src'),
-      components: path.resolve(__dirname, 'src/components'),
-      helpers: path.resolve(__dirname, 'src/helpers'),
-      img: path.resolve(__dirname, 'src/img/'),
-      modules: path.resolve(__dirname, 'src/modules'),
+      app: path.resolve(__dirname, './src'),
+      components: path.resolve(__dirname, './src/components'),
+      helpers: path.resolve(__dirname, './src/helpers'),
+      img: path.resolve(__dirname, './src/img'),
+      modules: path.resolve(__dirname, './src/modules'),
     }
   }
 }

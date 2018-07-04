@@ -1,24 +1,20 @@
 import React from 'react';
 
 export default class Timer extends React.Component {
-  state = {
-    minutes: 0,
-  }
-
   componentDidMount() {
-    this.interval = setInterval(() => 
-      this.setState((prevState) => ({
-        minutes: prevState.minutes + 1 
-      }) 
-    ), this.props.waitMinutes);
+    const { tick, exec } = this.props;
+    if(this.props.tick > 0) {
+      console.log('interval', tick);
+      this.interval = setInterval(exec, tick);
+    }
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval);
+    this.interval && clearInterval(this.interval);
   }
 
   render() {
-    console.log(this.state.minutes);
+    const { children } = this.props;
     return this.props.children;
   }
 }

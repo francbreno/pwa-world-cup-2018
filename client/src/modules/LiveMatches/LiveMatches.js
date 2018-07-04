@@ -13,20 +13,18 @@ class LiveMatches extends React.Component {
     return (
       <React.Fragment>
         <h1 className="title">Live Match</h1>
-        <Timer waitMinutes={wait}>
-          <MatchesLoader filter="current">
-          {({ matches }) => 
-            matches.map(match => 
-              <MatchFixture
-                key={match.fifa_id}
-                match={match}
-                showStatistics
-                compactScore
-              />
-            )
-          }
-          </MatchesLoader>
-        </Timer>
+        <MatchesLoader filter="current" tickTime={65 * 1000}>
+        {({ matches }) => 
+          matches.map(match => 
+            <MatchFixture
+              key={match.fifa_id}
+              cupMatch={match}
+              showStatistics
+              compactScore
+            />
+          )
+        }
+        </MatchesLoader>
       </React.Fragment>
     );
   }

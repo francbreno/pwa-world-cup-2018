@@ -3,6 +3,7 @@ import React from 'react';
 import ArrayUtil from 'helpers/array';
 
 import Message from 'components/Message';
+import Timer from 'components/Timer';
 
 const FILTERS = [
   'today',
@@ -18,6 +19,11 @@ export default class MatchesLoader extends React.Component {
   };
 
   componentDidMount() {
+    this.loadMatches();
+  }
+
+  loadMatches = () => {
+    console.log('load data');
     const { filter } = this.props;
     fetch(`https://worldcup.sfg.io/matches/${getFilter(filter)}`)
       .then(response => response.json())
@@ -37,14 +43,16 @@ export default class MatchesLoader extends React.Component {
 
   render() {
     const { matches, waiting } = this.state;
-    const { compact } = this.props;
+    const { compact, tickTime } = this.props;
     const hasMatches =  Array.isArray(matches) && matches.length > 0;
     return (
-      <div className="matches">
-        {waiting && <Message type="info">Loading...</Message>}
-        {!waiting && !ArrayUtil.isEmpty(matches) && this.props.children(this.state)}
-        {!waiting && ArrayUtil.isEmpty(matches) && <Message type="info">no matches</Message>}
-      </div>
+      <Timer tick={tickTime} exec={this.loadMatches}>
+        <div className="matches">
+          {waiting && <Message type="info">Loading...</Message>}
+          {!waiting && !ArrayUtil.isEmpty(matches) && this.props.children(this.state)}
+          {!waiting && ArrayUtil.isEmpty(matches) && <Message type="info">no matches</Message>}
+        </div>
+      </Timer>
     );
   }
 }

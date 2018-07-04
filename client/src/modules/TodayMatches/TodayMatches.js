@@ -10,7 +10,7 @@ const TodayMatches = () => (
     <MatchesLoader filter="today">
       {({ matches }) => 
         matches.map(match => 
-          <MatchFixture key={match.fifa_id} match={match} />
+          <MatchFixture key={match.fifa_id} cupMatch={match} />
         )
       }
     </MatchesLoader>

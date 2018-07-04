@@ -1,38 +1,39 @@
-const SERVER_URL = 'http://localhost:3333'; 
+const SERVER_URL = 'http://localhost:8989'; 
 
-const checkForPushSubscription = (registration) => 
-  registration.pushManager.getSubscription().then(() => 
-    console.log('update ui: already subscribed')
-  );
+const subscribeToPushServer = (registration) => {
+  const publicVapidKey = 'BIouqAHQ77E4_jcn5ouLB9fcmB_mUrCtUU9Foq_YhmCPTO731m5QPb4248K0qILUupaRPRz9wUCX5BmPy8wlu9U';
+  const subscription = registration.pushManager.subscribe({
+    userVisibleOnly: true,
+    applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
+  });
+  fetch(SERVER_URL, {
+    method: 'POST',
+    body: JSON.stringify(subscription),
+    headers: {
+      'content-type': 'application/json',
+    }.then(() => console.log('registered'))
+    .catch(err => console.err(err))
+  });
+}
 
-const subscribe = (swRegistration) => {
-  if (!swRegistration) return console.error('Service Worker registration not found');
-
-  getApplicationServerKey()
-    .then(applicationServerKey => {
-      // Subscribe
-      swRegistration.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey
-      }).then(res => res.toJSON())
-        .then(subscription => {
-          console.log(subscription);
-          // fetch(`${serverURL}/subscribe`, {method: 'POST', body: JSON.stringify(subscription)});
-        });
-    });
-};
-
-const getApplicationServerKey = () => 
-  fetch(`${serverUrl}/key`)
-    .then(res => res.arrayBuffer())
-    .then(key => new Uint8Array(key));
+function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, '+')
+    .replace(/_/g, '/');
+ 
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+ 
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
 
 export default function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register("sw.js")
-      .then(registration => {
-        console.log(`SW registered with scope: ${registration.scope}`);
-        checkForPushSubscription(registration);
-      }).catch(err => console.error(`SW registration failed: ${err}`));
+      .then(subscripToPushServer).catch(err => console.error(`SW registration failed: ${err}`));
   }
 };

@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 import './PopupMenu.css';
 
 const Links = ({ onClick, mobile }) => {
-  const linksColor = mobile ? 'has-text-link' : 'has-text-white';
+  const linksColorModifier = mobile ? 'has-text-link' : 'has-text-white';
   const visibilityStyleClasses = mobile ? 'is-hidden-desktop' : 'is-hidden-mobile';
-  const styleClasses = `navbar-item ${linksColor} ${visibilityStyleClasses}`;
+  const fontSizeModifier = mobile ? 'is-size-3' : '';
+  const styleClasses = `navbar-item ${linksColorModifier} ${visibilityStyleClasses} ${fontSizeModifier}`;
   return (
     <div className="navbar-end align-menu-right">
       <Link onClick={onClick} className={styleClasses} to="/">Today</Link>
