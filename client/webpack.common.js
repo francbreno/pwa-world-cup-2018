@@ -18,50 +18,50 @@ module.exports = {
     }),
     // Gera o arquivo manifest.json
     new WebpackPwaManifest({
-      name: 'World Cup 2018 PWA',
-      short_name: 'WC2018PWA',
-      description: 'A simple World Cup 2018 PWA',
+      name: 'Russia 2018 Matches',
+      short_name: 'Russia 2018',
+      description: 'A simple PWA to track the Fifa World CUp Russia 2018 Matches',
       start_url: '/',
-      background_color: '#ffffff',
+      orientation: 'any',
+      background_color: '#ff3860',
       theme_color: '#3273dc',
       icons: [
         {
           src: path.resolve('src/img/wc_2018.png'),
           sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
         },
-        {
-          src: path.resolve('src/img/wc_2018.png'),
-          size: '1024x1024' // you can also use the specifications pattern
-        }
       ]
     }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
+    // Criar o service worker a partir de um template (swSrc)
+    // new WorkboxPlugin.GenerateSW({
+      new WorkboxPlugin.InjectManifest({ // para um um template para o SW a ser gerado (necessário para push notifications)
+      swSrc: './public/sw.js',
       swDest: 'sw.js',
-      navigateFallback: '/',
-      // external content caching
-      runtimeCaching: [
-        {
-          urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io\/matches\/current/),
-          handler: 'networkFirst',
-          options: {
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-        {
-          urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io/),
-          handler: 'staleWhileRevalidate',
-          options: {
-            cacheableResponse: {
-              statuses: [0, 200],
-            },
-          },
-        },
-      ]
-    })
+      // navigateFallback: '/',
+      // clientsClaim: true,
+      // skipWaiting: true,
+      // // external content caching
+      // runtimeCaching: [
+      //   {
+      //     urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io\/matches\/current/),
+      //     handler: 'networkFirst',
+      //     options: {
+      //       cacheableResponse: {
+      //         statuses: [0, 200],
+      //       },
+      //     },
+      //   },
+      //   {
+      //     urlPattern: new RegExp(/^https:\/\/worldcup.sfg.io/),
+      //     handler: 'staleWhileRevalidate',
+      //     options: {
+      //       cacheableResponse: {
+      //         statuses: [0, 200],
+      //       },
+      //     },
+      //   },
+      // ]
+    }),
   ],
   optimization: {
     splitChunks: {

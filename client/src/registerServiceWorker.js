@@ -1,39 +1,28 @@
-const SERVER_URL = 'http://localhost:8989'; 
+import PushHelper from 'helpers/push';
 
-const subscribeToPushServer = (registration) => {
-  const publicVapidKey = 'BIouqAHQ77E4_jcn5ouLB9fcmB_mUrCtUU9Foq_YhmCPTO731m5QPb4248K0qILUupaRPRz9wUCX5BmPy8wlu9U';
-  const subscription = registration.pushManager.subscribe({
-    userVisibleOnly: true,
-    applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
-  });
-  fetch(SERVER_URL, {
-    method: 'POST',
-    body: JSON.stringify(subscription),
-    headers: {
-      'content-type': 'application/json',
-    }.then(() => console.log('registered'))
-    .catch(err => console.err(err))
-  });
-}
+const SERVER_URL = 'http://localhost:3000'; 
 
-function urlBase64ToUint8Array(base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4);
-  const base64 = (base64String + padding)
-    .replace(/\-/g, '+')
-    .replace(/_/g, '/');
- 
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
- 
-  for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
-  }
-  return outputArray;
+const onServiceWorkerRegistrationSuccess = (registration) => {
+  if ('Notification' in window) {
+    if (Notification.permission === "granted") {
+      // PushHelper.subscribe();
+    } else if (Notification.permission === "blocked") {
+      PushHelper.unsubscribe();
+    } else {
+      Notification.requestPermission(status => {
+        if (status === 'granted') {
+          PushHelper.subscribe();
+        }
+      });
+    }
+  }  
 }
 
 export default function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("sw.js")
-      .then(subscripToPushServer).catch(err => console.error(`SW registration failed: ${err}`));
+    navigator.serviceWorker
+      .register("sw.js")
+      .then(onServiceWorkerRegistrationSuccess)
+      .catch(err => console.error(`SW registration failed: ${err}`));
   }
 };
