@@ -24,8 +24,6 @@ const Leaderboard = Loadable({
   loading: Loading
 });
 
-import './App.css';
-
 const App = () => (
   <Router>
     <div>

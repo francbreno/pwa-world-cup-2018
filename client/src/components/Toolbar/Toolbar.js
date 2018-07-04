@@ -5,7 +5,7 @@ import PopupMenu from './PopupMenu';
 import Container from 'components/Container';
 
 import './Toolbar.css';
-import Logo from 'img/wc_2018.png';
+import Logo from 'img/brand.png';
 
 export default class Toolbar extends React.Component {
 

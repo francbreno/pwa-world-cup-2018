@@ -24,16 +24,13 @@ const MatchFixture = ({ match, cupMatch, showStatistics, showEvents, showTime, c
   <React.Fragment>
     <Card
       header={() => (
-        <React.Fragment>
-          <MatchLocation
-            stage={cupMatch.stage}
-            venue={cupMatch.venue}
-            location={cupMatch.location}
-            datetime={cupMatch.datetime}
-            weather={cupMatch.weather}
-          />
-          <Link to={`${match.url}/${cupMatch.fifa_id}`}>Match Details</Link>
-        </React.Fragment>
+        <MatchLocation
+          stage={cupMatch.stage}
+          venue={cupMatch.venue}
+          location={cupMatch.location}
+          datetime={cupMatch.datetime}
+          weather={cupMatch.weather}
+        />
       )}
 
       content={() => (
@@ -46,7 +43,7 @@ const MatchFixture = ({ match, cupMatch, showStatistics, showEvents, showTime, c
             compact={compactScore}
             homeTeam={cupMatch.home_team}
             awayTeam={cupMatch.away_team}
-            matchStatus={match.status}
+            matchStatus={cupMatch.status}
           />
           {showPenaltiesScore(cupMatch.status, cupMatch.home_team.penalties, cupMatch.away_team.penalties) && 
             <PenaltiesScore
