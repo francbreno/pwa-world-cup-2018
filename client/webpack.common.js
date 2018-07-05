@@ -23,7 +23,7 @@ module.exports = {
       description: 'A simple PWA to track the Fifa World CUp Russia 2018 Matches',
       start_url: '/',
       orientation: 'any',
-      background_color: '#ff3860',
+      background_color: '#3273dc',
       theme_color: '#3273dc',
       icons: [
         {

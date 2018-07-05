@@ -5,7 +5,7 @@ const SERVER_URL = 'http://localhost:3000';
 const onServiceWorkerRegistrationSuccess = (registration) => {
   if ('Notification' in window) {
     if (Notification.permission === "granted") {
-      // PushHelper.subscribe();
+      // poderia fazer algo aqui...
     } else if (Notification.permission === "blocked") {
       PushHelper.unsubscribe();
     } else {

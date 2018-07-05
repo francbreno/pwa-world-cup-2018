@@ -39,7 +39,7 @@ function requestSubscription(subscription) {
     headers: { 'content-type': 'application/json', }
   })
   .then(() => console.log('registered'))
-  .catch(err => console.err(err));
+  .catch(err => console.error(err));
 }
 
 function requestDeleteSubscription() {
@@ -48,7 +48,7 @@ function requestDeleteSubscription() {
     headers: { 'content-type': 'application/json', }
   })
   .then(() => console.log('unregistered'))
-  .catch(err => console.err(err));
+  .catch(err => console.error(err));
 }
 
 function urlBase64ToUint8Array(base64String) {
