@@ -30,7 +30,8 @@ module.exports = {
           src: path.resolve('src/img/wc_2018.png'),
           sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
         },
-      ]
+      ],
+      gcm_sender_id: "103953800507",
     }),
     // Criar o service worker a partir de um template (swSrc)
     // new WorkboxPlugin.GenerateSW({
