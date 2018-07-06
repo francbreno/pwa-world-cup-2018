@@ -1,21 +1,15 @@
 import PushHelper from 'helpers/push';
-
-const SERVER_URL = 'http://localhost:3000'; 
+import firebase from './firebase';
+import { 
+  askForPermissionToReceiveNotifications,
+  associateFirebaseMessaging,
+  subscribeUserToReceiveNotifications
+} from './firebase/notifications';
 
 const onServiceWorkerRegistrationSuccess = (registration) => {
-  if ('Notification' in window) {
-    if (Notification.permission === "granted") {
-      // poderia fazer algo aqui...
-    } else if (Notification.permission === "blocked") {
-      PushHelper.unsubscribe();
-    } else {
-      Notification.requestPermission(status => {
-        if (status === 'granted') {
-          PushHelper.subscribe();
-        }
-      });
-    }
-  }  
+  associateFirebaseMessaging(registration)
+    .then(askForPermissionToReceiveNotifications)
+    .then(subscribeUserToReceiveNotifications);
 }
 
 export default function registerServiceWorker() {
@@ -23,6 +17,7 @@ export default function registerServiceWorker() {
     navigator.serviceWorker
       .register("sw.js")
       .then(onServiceWorkerRegistrationSuccess)
+      // .then(askForNotificationsPermission)
       .catch(err => console.error(`SW registration failed: ${err}`));
   }
 };
